@@ -6,6 +6,8 @@ trois tables sont présentes : Entreprise, Avantage & Convention
 
 # Préparation de la base de donnée avec PostgreSQL
 
+dans ce cas, le travail a été fait sur une base postgres auto-hébergée sur un NAS Qnap.
+
 ##Entreprise
 --Créer la table tentreprises
 --(fait manuellement dans ce cas)
