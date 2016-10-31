@@ -2,14 +2,18 @@
 pour l'analyse de la base de Transparence Santé accessible sur data.gouv.fr : https://www.data.gouv.fr/fr/datasets/transparence-sante-1/#discussion-1
 
 un fichier pdf est présent pour décrire le contenu de l'archive mais a été d'une utilité modérée
+trois tables sont présentes : Entreprise, Avantage & Convention
 
 # Préparation de la base de donnée avec PostgreSQL
+
+##Entreprise
 --Créer la table tentreprises
 --(fait manuellement dans ce cas)
 
 --Importer le contenu du fichier
 COPY tentreprise FROM '/share/MD0_DATA/.qpkg/PostgreSQL/web/TransparenceSante/entreprise_2016_10_24_04_00.csv' CSV HEADER DELIMITER ',';
 
+##Convention
 --Créer la table tconventions
 CREATE TABLE tconventions (	
 entreprise_identifiant	varchar,
@@ -57,6 +61,7 @@ conv_manifestation_organisateur	varchar
 -- Importer le contenu du fichier convention
 COPY tconventions (entreprise_identifiant,denomination_sociale,ligne_identifiant,ligne_rectification,benef_categorie_code,categorie,benef_nom,benef_prenom,benef_qualite_code,qualite,benef_adresse1,benef_adresse2,benef_adresse3,benef_adresse4,benef_codepostal,benef_ville,benef_pays_code,pays,benef_titre_code,benef_titre_libelle,benef_specialite_code,benef_speicalite_libelle,benef_qualification,benef_identifiant_type_code,identifiant_type,benef_identifiant_valeur,benef_etablissement,benef_etablissement_codepostal,benef_etablissement_ville,benef_denomination_sociale,benef_objet_social,ligne_type,conv_date_signature,conv_objet,conv_date_debut,conv_date_fin,conv_manifestation_date,conv_manifestation_nom,conv_manifestation_lieu,conv_manifestation_organisateur) FROM '/share/MD0_DATA/.qpkg/PostgreSQL/web/TransparenceSante/declaration_convention_2016_10_24_04_00.csv' CSV HEADER DELIMITER ';';
 
+##Avantage
 --Créer la table tavantages
 CREATE TABLE tavantages (	
 entreprise_identifiant	varchar,
