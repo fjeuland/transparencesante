@@ -1,4 +1,4 @@
-# transparencesante
+# TransparenceSante
 pour l'analyse de la base de Transparence Santé accessible sur data.gouv.fr : https://www.data.gouv.fr/fr/datasets/transparence-sante-1/#discussion-1
 
 un fichier pdf est présent pour décrire le contenu de l'archive mais a été d'une utilité modérée
@@ -107,3 +107,6 @@ avant_conv_semestre	varchar
 
 -- Importer le contenu du fichier avantage
 COPY tavantages (entreprise_identifiant,denomination_sociale,ligne_identifiant,ligne_rectification,benef_categorie_code,categorie,benef_nom,benef_prenom,benef_qualite_code,qualite,benef_adresse1,benef_adresse2,benef_adresse3,benef_adresse4,benef_codepostal,benef_ville,benef_pays_code,pays,benef_titre_code,benef_titre_libelle,benef_specialite_code,benef_speicalite_libelle,benef_qualification,benef_identifiant_type_code,identifiant_type,benef_identifiant_valeur,benef_etablissement,benef_etablissement_codepostal,benef_etablissement_ville,benef_denomination_sociale,benef_objet_social,ligne_type,avant_date_signature,avant_montant_ttc,avant_nature,avant_convention_lie,avant_conv_semestre) FROM '/share/MD0_DATA/.qpkg/PostgreSQL/web/TransparenceSante/declaration_avantage_2016_10_24_04_00.csv' CSV HEADER DELIMITER ';';
+
+# Premiers résultats
+sur https://www.google.com/fusiontables/DataSource?docid=1uHJU1ArdvuI24cnVbcDalHTbuK0_5vqQspKekV3M
