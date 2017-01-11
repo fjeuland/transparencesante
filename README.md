@@ -110,7 +110,11 @@ COPY tavantages (entreprise_identifiant,denomination_sociale,ligne_identifiant,l
 
 # Requêtes
 
-à venir
+--CREATE MATERIALIZED VIEW synthese AS
+SELECT tentreprises.denomination_sociale, extract(year from avant_date_signature) AS annee, extract(month from avant_date_signature) AS mois, SUM(avant_montant_ttc), a.pays
+FROM tentreprises
+LEFT JOIN tavantages AS a ON identifiant = entreprise_identifiant
+GROUP BY tentreprises.denomination_sociale, a.pays, extract(year from avant_date_signature), extract(month from avant_date_signature)
 
 # Premiers résultats
 sur https://www.google.com/fusiontables/DataSource?docid=1uHJU1ArdvuI24cnVbcDalHTbuK0_5vqQspKekV3M
